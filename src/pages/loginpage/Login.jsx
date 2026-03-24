@@ -25,13 +25,22 @@ export default function Login() {
       );
 
       console.log(res.data);
+
+      // ✅ Save token
+      localStorage.setItem("token", res.data.token);
+
+      // ✅ Optional: save user info
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
       alert("Login successful");
 
-      // save token later
-      // localStorage.setItem("token", res.data.token);
+      // ✅ Redirect to dashboard
+      navigate("/dashboard");
     } catch (err) {
       console.log(err.response?.data || err.message);
-      alert("Login failed");
+
+      // ✅ Show backend message
+      alert(err.response?.data?.message || "Login failed");
     }
   };
 

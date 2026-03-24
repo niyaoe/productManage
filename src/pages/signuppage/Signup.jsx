@@ -25,10 +25,16 @@ export default function Signup() {
       );
 
       console.log(res.data);
+
       alert("Signup successful");
+
+      // ✅ Redirect to login page
+      navigate("/");
     } catch (err) {
       console.log(err.response?.data || err.message);
-      alert("Signup failed");
+
+      // ✅ Show backend message if exists
+      alert(err.response?.data?.message || "Signup failed");
     }
   };
 
@@ -40,7 +46,7 @@ export default function Signup() {
           <h1>Welcome Back!</h1>
           <p>To keep connected with us please login with your personal info</p>
 
-          <button className="signin-btn" onClick={() => navigate("/login")}>
+          <button className="signin-btn" onClick={() => navigate("/")}>
             SIGN IN
           </button>
         </div>
