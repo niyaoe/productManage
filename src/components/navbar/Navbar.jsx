@@ -1,12 +1,20 @@
 import { useState } from "react";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
     console.log("Search:", search);
     // later connect API
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
   return (
@@ -23,7 +31,9 @@ export default function Navbar() {
       </button>
 
       <div className="nav-right-section">
-        <button className="logout-btn">Logout</button>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
         <button className="wish-btn">❤️</button>
       </div>
     </div>
