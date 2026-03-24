@@ -18,11 +18,13 @@ export default function Navbar() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <button onClick={handleSearch}>Search</button>
+      <button className="search-button" onClick={handleSearch}>
+        Search
+      </button>
 
       <div className="nav-right-section">
         <button className="logout-btn">Logout</button>
-        <span>Cart 🛒</span>
+        <button className="wish-btn">❤️</button>
       </div>
     </div>
   );

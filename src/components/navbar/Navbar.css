@@ -15,7 +15,7 @@
   width: 250px;
 }
 
-.nav-main-bar button {
+.search-button {
   background: #f4a300;
   border: none;
   padding: 8px 15px;
@@ -31,7 +31,16 @@
 }
 
 .logout-btn {
-  background: #f4a300;
+  background: #ff4646;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.wish-btn {
+  background: #eeeeee;
   border: none;
   padding: 8px 15px;
   border-radius: 20px;
