@@ -21,7 +21,7 @@ export default function Navbar() {
       <button onClick={handleSearch}>Search</button>
 
       <div className="nav-right-section">
-        <span>Sign In</span>
+        <button className="logout-btn">Logout</button>
         <span>Cart 🛒</span>
       </div>
     </div>

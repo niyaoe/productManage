@@ -29,3 +29,12 @@
   display: flex;
   gap: 20px;
 }
+
+.logout-btn {
+  background: #f4a300;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
