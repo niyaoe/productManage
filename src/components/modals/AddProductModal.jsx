@@ -6,9 +6,7 @@ export default function AddProductModal({ close, refresh }) {
   const [name, setName] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [categories, setCategories] = useState([]);
-  const [variants, setVariants] = useState([
-    { ram: "", price: "", qty: "" },
-  ]);
+  const [variants, setVariants] = useState([{ ram: "", price: "", qty: "" }]);
 
   useEffect(() => {
     API.get("/category").then((res) => setCategories(res.data));
@@ -56,23 +54,39 @@ export default function AddProductModal({ close, refresh }) {
               <option key={s._id} value={s._id}>
                 {c.name} - {s.name}
               </option>
-            ))
+            )),
           )}
         </select>
 
         {/* VARIANTS */}
         {variants.map((v, i) => (
           <div key={i} className="variant-row">
-            <input placeholder="RAM" onChange={(e) => handleVariantChange(i, "ram", e.target.value)} />
-            <input placeholder="Price" onChange={(e) => handleVariantChange(i, "price", e.target.value)} />
-            <input placeholder="Qty" onChange={(e) => handleVariantChange(i, "qty", e.target.value)} />
+            <input
+              placeholder="RAM"
+              onChange={(e) => handleVariantChange(i, "ram", e.target.value)}
+            />
+            <input
+              placeholder="Price"
+              onChange={(e) => handleVariantChange(i, "price", e.target.value)}
+            />
+            <input
+              placeholder="Qty"
+              onChange={(e) => handleVariantChange(i, "qty", e.target.value)}
+            />
           </div>
         ))}
 
-        <button onClick={addVariant}>+ Add Variant</button>
-
-        <button onClick={handleSubmit}>Add Product</button>
-        <button onClick={close}>Cancel</button>
+        <button className="add-variant-btn" onClick={addVariant}>
+          + Add Variant
+        </button>
+        <div className="modal-actions">
+          <button className="modal-btn" onClick={handleSubmit}>
+            Add
+          </button>
+          <button className="modal-cancel" onClick={close}>
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );

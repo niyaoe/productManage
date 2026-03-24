@@ -26,8 +26,14 @@ export default function AddCategoryModal({ close, refresh }) {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <button onClick={handleSubmit}>Add</button>
-        <button onClick={close}>Cancel</button>
+        <div className="modal-actions">
+          <button className="modal-btn" onClick={handleSubmit}>
+            Add
+          </button>
+          <button className="modal-cancel" onClick={close}>
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );
