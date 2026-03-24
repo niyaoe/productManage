@@ -1,0 +1,46 @@
+.dash-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dash-body-container {
+  display: flex;
+  flex: 1;
+}
+
+/* CONTENT */
+.dash-content-area {
+  flex: 1;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+/* ACTION BUTTONS */
+.dash-action-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dash-action-bar button {
+  padding: 8px 16px;
+  border: none;
+  background: #f4a300;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* GRID */
+.dash-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* PAGINATION */
+.dash-pagination {
+  margin-top: 20px;
+  text-align: center;
+}

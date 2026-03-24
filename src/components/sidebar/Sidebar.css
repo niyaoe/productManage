@@ -1,0 +1,16 @@
+.side-main-container {
+  width: 230px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.side-main-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-main-container li {
+  margin: 10px 0;
+  cursor: pointer;
+}
