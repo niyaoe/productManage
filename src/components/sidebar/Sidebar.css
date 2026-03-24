@@ -14,3 +14,29 @@
   margin: 10px 0;
   cursor: pointer;
 }
+
+.cat-title {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sub-list {
+  margin-left: 15px;
+}
+
+.sub-list li {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sub-list li:hover {
+  background: #eee;
+}
+
+.active-sub {
+  background: #d0e7ff;
+  font-weight: bold;
+}
