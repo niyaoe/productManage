@@ -1,0 +1,15 @@
+.prod-card-container {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.prod-card-container img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.prod-stars {
+  color: gold;
+}

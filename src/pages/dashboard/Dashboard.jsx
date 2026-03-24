@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
-import ProductCard from "../../components/productCard/ProductCard";
-import API from "../../services/api";
+import Navbar from "../../components/navbar/Navbar.jsx";
+import Sidebar from "../../components/sidebar/Sidebar.jsx";
+import ProductCard from "../../components/productCard/ProductCard.jsx";
+import API from "../../services/api.js";
 import "./Dashboard.css";
 
 export default function Dashboard() {
