@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({onWishlist}) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
@@ -34,7 +34,9 @@ export default function Navbar() {
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>
-        <button className="wish-btn">❤️</button>
+        <button className="wish-btn" onClick={onWishlist}>
+          ❤️
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,52 @@
+.wish-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.wish-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0; /* keep it 0 */
+  width: 300px;
+  height: 100%;
+  background: white;
+
+  transform: translateX(100%); /* move fully outside */
+  transition: transform 0.3s ease;
+
+  z-index: 999;
+}
+.wish-sidebar.open {
+  transform: translateX(0);
+}
+
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.wish-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.wish-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.wish-info p {
+  margin: 0;
+}
+
+.wish-info span {
+  color: orange;
+  font-size: 12px;
+}

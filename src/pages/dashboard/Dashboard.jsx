@@ -8,12 +8,15 @@ import API from "../../services/api";
 import AddCategoryModal from "../../components/modals/AddCategoryModal";
 import AddSubCategoryModal from "../../components/modals/AddSubCategoryModal";
 import AddProductModal from "../../components/modals/AddProductModal";
+import WishlistSidebar from "../../components/wishlist/WishlistSidebar";
 
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
   const [selectedSub, setSelectedSub] = useState(null);
+
+  const [showWishlist, setShowWishlist] = useState(false);
 
   // ✅ modal states
   const [showCat, setShowCat] = useState(false);
@@ -42,7 +45,12 @@ export default function Dashboard() {
 
   return (
     <div className="dash-main-container">
-      <Navbar />
+      <Navbar onWishlist={() => setShowWishlist(true)} />
+
+      <WishlistSidebar
+        open={showWishlist}
+        close={() => setShowWishlist(false)}
+      />
 
       <div className="dash-body-container">
         <Sidebar onSelectSub={setSelectedSub} />
