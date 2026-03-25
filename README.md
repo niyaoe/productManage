@@ -1,17 +1,59 @@
-# React + Vite
+# 🛒 Product Management Application (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a full-stack Product Management Application built using the MERN stack (MongoDB, Express.js, React, Node.js).
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Frontend Repository:
+https://github.com/niyaoe/productManage
 
-## React Compiler
+Backend Repository:
+https://github.com/niyaoe/productManage-server
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+* User Authentication (Signup & Login)
+* Category & Subcategory Management
+* Product Management with Variants (RAM, Price, Quantity)
+* Product Listing with Filtering
+* Wishlist Functionality
+* Search Functionality
+* Pagination
+* Product Details View
+* Edit Product (with image, variants, subcategory)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# productManage" 
+Backend Setup
+
+git clone https://github.com/niyaoe/productManage-server
+
+env file already added
+
+npm install
+
+npm start
+
+
+
+
+Frontend Setup
+
+
+git clone https://github.com/niyaoe/productManage
+
+env file already added
+
+npm install
+
+npm run dev
+
+
+
+API Base URL
+
+http://localhost:5000/api
+
+
+
+
+## 👤 Author
+
+**Niyas PT**
+
