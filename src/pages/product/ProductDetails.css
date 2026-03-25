@@ -1,0 +1,139 @@
+/* OVERLAY */
+.pd-overlay {
+  position: fixed;
+  top: 60px; /* below navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: rgba(15, 76, 107, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL */
+.pd-modal {
+  width: 850px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  padding: 25px;
+  gap: 30px;
+  position: relative;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* CLOSE */
+.pd-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* LEFT */
+.pd-left {
+  flex: 1;
+}
+
+/* IMAGE BOX */
+.pd-img-box {
+  border: 2px solid #f4a300;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.pd-img-box img {
+  width: 250px;
+  object-fit: contain;
+}
+
+/* RIGHT */
+.pd-right {
+  flex: 1.5;
+}
+
+.pd-title {
+  color: #0f4c6b;
+  margin-bottom: 10px;
+}
+
+.pd-price {
+  color: #f4a300;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.pd-desc {
+  margin: 10px 0;
+  color: #555;
+}
+
+/* VARIANTS */
+.pd-variant-section {
+  margin-top: 10px;
+}
+
+.pd-variant-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pd-variant {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: white;
+}
+
+.pd-variant.active {
+  background: #0f4c6b;
+  color: white;
+  border: none;
+}
+
+/* QTY */
+.pd-qty {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* BUTTONS */
+.pd-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.pd-cart-btn {
+  background: #f4a300;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.pd-wishlist-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.pd-edit-btn {
+  background: #0f4c6b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}

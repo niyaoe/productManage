@@ -1,18 +1,30 @@
+import { useNavigate } from "react-router-dom";
 import "./ProductCard.css";
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="prod-card-container">
-      <img
-        src={product.image || "https://via.placeholder.com/120"}
-        alt="product"
-      />
+    <div
+      className="prod-card-container"
+      onClick={() => navigate(`/product/${product._id}`)}
+    >
+      <div className="prod-img-wrapper">
+        <img
+          src={product.image || "https://via.placeholder.com/120"}
+          alt="product"
+        />
+      </div>
 
-      <h4>{product.name}</h4>
+      <h4 className="prod-title">{product.name}</h4>
 
-      <p>₹{product.variants?.[0]?.price}</p>
+      <p className="prod-price">
+        ₹{product.variants?.[0]?.price}
+      </p>
 
-      <div className="prod-stars">★★★★★</div>
+      <div className="prod-bottom">
+        <span className="prod-rating">★★★★★</span>
+      </div>
     </div>
   );
 }

@@ -8,9 +8,27 @@ export default function AddProductModal({ close, refresh }) {
   const [categories, setCategories] = useState([]);
   const [variants, setVariants] = useState([{ ram: "", price: "", qty: "" }]);
 
+  const [image, setImage] = useState("");
+  const [preview, setPreview] = useState("");
+
   useEffect(() => {
     API.get("/category").then((res) => setCategories(res.data));
   }, []);
+
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setImage(reader.result); // base64
+      setPreview(reader.result); // preview
+    };
+
+    reader.readAsDataURL(file);
+  };
 
   const addVariant = () => {
     setVariants([...variants, { ram: "", price: "", qty: "" }]);
@@ -28,6 +46,7 @@ export default function AddProductModal({ close, refresh }) {
         name,
         subCategory,
         variants,
+        image, // ✅ send image
       });
 
       refresh();
@@ -57,6 +76,10 @@ export default function AddProductModal({ close, refresh }) {
             )),
           )}
         </select>
+
+        <input type="file" accept="image/*" onChange={handleImage} />
+
+        {preview && <img src={preview} alt="preview" className="preview-img" />}
 
         {/* VARIANTS */}
         {variants.map((v, i) => (
