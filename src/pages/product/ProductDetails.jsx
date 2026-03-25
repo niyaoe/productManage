@@ -96,7 +96,7 @@ export default function ProductDetails() {
                 ❤️
               </button>
               <button className="pd-edit-btn" onClick={() => setShowEdit(true)}>
-                ✏️ Edit
+                Edit Product
               </button>
             </div>
           </div>
