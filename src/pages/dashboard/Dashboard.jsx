@@ -20,6 +20,7 @@ export default function Dashboard() {
 
   const [page, setPage] = useState(1);
   const limit = 6;
+  const [search, setSearch] = useState("");
 
   // ✅ modal states
   const [showCat, setShowCat] = useState(false);
@@ -28,7 +29,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchProducts();
-  }, [selectedSub, page]);
+  }, [selectedSub, page, search]);
 
   // ✅ fetch products
   const fetchProducts = async () => {
@@ -37,6 +38,10 @@ export default function Dashboard() {
 
       if (selectedSub) {
         url += `&subCategory=${selectedSub}`;
+      }
+
+      if (search) {
+        url += `&search=${search}`;
       }
 
       const res = await API.get(url);
@@ -48,7 +53,11 @@ export default function Dashboard() {
 
   return (
     <div className="dash-main-container">
-      <Navbar onWishlist={() => setShowWishlist(true)} />
+      <Navbar
+        onWishlist={() => setShowWishlist(true)}
+        search={search}
+        setSearch={setSearch}
+      />
 
       <WishlistSidebar
         open={showWishlist}
@@ -73,6 +82,15 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="pagination">
+        <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+          Prev
+        </button>
+
+        <span>Page {page}</span>
+
+        <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
 
       {/* 🔥 MODALS */}

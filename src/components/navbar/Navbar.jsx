@@ -2,9 +2,8 @@ import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar({onWishlist}) {
+export default function Navbar({ onWishlist, search, setSearch }) {
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
 
   const handleSearch = () => {
     console.log("Search:", search);
@@ -26,9 +25,7 @@ export default function Navbar({onWishlist}) {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <button className="search-button" onClick={handleSearch}>
-        Search
-      </button>
+      <button className="search-button">Search</button>
 
       <div className="nav-right-section">
         <button className="logout-btn" onClick={handleLogout}>

@@ -92,3 +92,23 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
 }
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background: #0f4c6b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination span {
+  padding: 6px 10px;
+}
