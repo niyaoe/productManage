@@ -4,6 +4,7 @@ import API from "../../services/api";
 import Navbar from "../../components/navbar/Navbar";
 import "./ProductDetails.css";
 import EditProductModal from "../../components/modals/EditProductModal";
+import { toggleWishlist } from "../../services/wishlist";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -27,6 +28,15 @@ export default function ProductDetails() {
   };
 
   if (!product) return <p>Loading...</p>;
+
+  const handleWishlist = async () => {
+    try {
+      await toggleWishlist(product._id);
+      alert("Wishlist updated");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -82,7 +92,9 @@ export default function ProductDetails() {
             {/* ACTION BUTTONS */}
             <div className="pd-actions">
               <button className="pd-cart-btn">Buy Now</button>
-              <button className="pd-wishlist-btn">❤️</button>
+              <button className="pd-wishlist-btn" onClick={handleWishlist}>
+                ❤️
+              </button>
               <button className="pd-edit-btn" onClick={() => setShowEdit(true)}>
                 ✏️ Edit
               </button>

@@ -50,3 +50,8 @@
   color: orange;
   font-size: 12px;
 }
+
+.wish-sidebar.open {
+  transform: translateX(0);
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+}
