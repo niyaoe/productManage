@@ -134,3 +134,16 @@
   margin-bottom: 10px;
   border: 2px solid #eee;
 }
+
+.variant-delete-btn {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.variant-delete-btn:hover {
+  background: #cc0000;
+}

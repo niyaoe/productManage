@@ -71,7 +71,7 @@ export default function ProductDetails() {
                     }
                     onClick={() => setSelectedVariant(v)}
                   >
-                    {v.ram}
+                    {v.ram} GB
                   </button>
                 ))}
               </div>
