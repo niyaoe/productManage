@@ -20,7 +20,7 @@ export default function WishlistSidebar({ open, close }) {
 
   const removeItem = async (id) => {
     try {
-      await API.post("/wishlist", { productId: id }); // toggle remove
+      await API.post("/wishlist", { productId: id });
       fetchWishlist();
     } catch (err) {
       console.log(err);
@@ -33,24 +33,31 @@ export default function WishlistSidebar({ open, close }) {
 
       <div className={`wish-sidebar ${open ? "open" : ""}`}>
         <div className="wish-header">
-          <h3>Wishlist</h3>
-          <span onClick={close}>✖</span>
+          <h3>My Wishlist</h3>
+          <span className="wish-close" onClick={close}>✖</span>
         </div>
 
         <div className="wish-list">
           {products.length === 0 ? (
-            <p>No items</p>
+            <p className="wish-empty">No items in wishlist</p>
           ) : (
             products.map((p) => (
               <div key={p._id} className="wish-item">
                 <img src={p.image} alt="" />
 
                 <div className="wish-info">
-                  <p>{p.name}</p>
-                  <span>₹{p.variants?.[0]?.price}</span>
+                  <p className="wish-name">{p.name}</p>
+                  <span className="wish-price">
+                    ₹{p.variants?.[0]?.price}
+                  </span>
                 </div>
 
-                <button onClick={() => removeItem(p._id)}>❌</button>
+                <button
+                  className="wish-remove"
+                  onClick={() => removeItem(p._id)}
+                >
+                  ✖
+                </button>
               </div>
             ))
           )}
