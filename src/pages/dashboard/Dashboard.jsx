@@ -18,6 +18,9 @@ export default function Dashboard() {
 
   const [showWishlist, setShowWishlist] = useState(false);
 
+  const [page, setPage] = useState(1);
+  const limit = 6;
+
   // ✅ modal states
   const [showCat, setShowCat] = useState(false);
   const [showSub, setShowSub] = useState(false);
@@ -25,15 +28,15 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchProducts();
-  }, [selectedSub]);
+  }, [selectedSub, page]);
 
   // ✅ fetch products
   const fetchProducts = async () => {
     try {
-      let url = "/products";
+      let url = `/products?page=${page}&limit=${limit}`;
 
       if (selectedSub) {
-        url += `?subCategory=${selectedSub}`;
+        url += `&subCategory=${selectedSub}`;
       }
 
       const res = await API.get(url);

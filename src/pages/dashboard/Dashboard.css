@@ -59,3 +59,36 @@
   border-radius: 20px;
   cursor: pointer;
 }
+
+/* MAIN */
+.dash-main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR FIX */
+.nav-main-bar {
+  flex-shrink: 0; /* 🔥 prevents shrinking */
+}
+
+/* BODY */
+.dash-body-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* CONTENT */
+.dash-content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* scroll only content */
+}
+
+/* GRID */
+.dash-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
