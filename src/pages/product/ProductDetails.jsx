@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../../services/api";
 import Navbar from "../../components/navbar/Navbar";
 import "./ProductDetails.css";
+import EditProductModal from "../../components/modals/EditProductModal";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export default function ProductDetails() {
 
   const [product, setProduct] = useState(null);
   const [selectedVariant, setSelectedVariant] = useState(null);
-
+  const [showEdit, setShowEdit] = useState(false);
   useEffect(() => {
     fetchProduct();
   }, []);
@@ -34,9 +35,10 @@ export default function ProductDetails() {
       {/* 🔥 MODAL STYLE PAGE */}
       <div className="pd-overlay">
         <div className="pd-modal">
-
           {/* CLOSE */}
-          <span className="pd-close" onClick={() => navigate(-1)}>✖</span>
+          <span className="pd-close" onClick={() => navigate(-1)}>
+            ✖
+          </span>
 
           {/* LEFT IMAGE */}
           <div className="pd-left">
@@ -52,9 +54,7 @@ export default function ProductDetails() {
           <div className="pd-right">
             <h2 className="pd-title">{product.name}</h2>
 
-            <p className="pd-price">
-              ₹{selectedVariant?.price}
-            </p>
+            <p className="pd-price">₹{selectedVariant?.price}</p>
 
             <p className="pd-desc">{product.description}</p>
 
@@ -67,9 +67,7 @@ export default function ProductDetails() {
                   <button
                     key={i}
                     className={
-                      selectedVariant === v
-                        ? "pd-variant active"
-                        : "pd-variant"
+                      selectedVariant === v ? "pd-variant active" : "pd-variant"
                     }
                     onClick={() => setSelectedVariant(v)}
                   >
@@ -79,18 +77,25 @@ export default function ProductDetails() {
               </div>
             </div>
 
-            <p className="pd-qty">
-              Available: {selectedVariant?.qty}
-            </p>
+            <p className="pd-qty">Available: {selectedVariant?.qty}</p>
 
             {/* ACTION BUTTONS */}
             <div className="pd-actions">
               <button className="pd-cart-btn">Buy Now</button>
               <button className="pd-wishlist-btn">❤️</button>
-              <button className="pd-edit-btn">Edit Product</button>
+              <button className="pd-edit-btn" onClick={() => setShowEdit(true)}>
+                ✏️ Edit
+              </button>
             </div>
           </div>
         </div>
+        {showEdit && (
+          <EditProductModal
+            product={product}
+            close={() => setShowEdit(false)}
+            refresh={fetchProduct}
+          />
+        )}
       </div>
     </>
   );
